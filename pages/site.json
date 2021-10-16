@@ -1,123 +1,62 @@
 {
-  "status": 0,
-  "msg": "",
-  "data": {
-    "pages": [
-      {
-        "label": "Home",
-        "url": "/",
-        "redirect": "/index/1"
-      },
-      {
-        "label": "示例",
-        "children": [
-          {
-            "label": "页面A",
-            "url": "index",
-            "schema": {
-              "type": "page",
-              "title": "页面A",
-              "body": "页面A"
+    "status": 0,
+    "msg": "",
+    "data": {
+        "pages": [
+            {
+                "url": "/",
+                "schema": {
+                    "type": "page",
+                    "body": {
+                        "type": "markdown",
+                        "value": "markdown **text**"
+                    }
+                },
+                "children": [
+                ]
             },
-            "children": [
-              {
-                "label": "页面A-1",
-                "url": "1",
+            {
+                "label": "系统设置",
+                "url": "/sys",
                 "schema": {
-                  "type": "page",
-                  "title": "页面A-1",
-                  "body": "页面A-1"
-                }
-              },
-              {
-                "label": "页面A-2",
-                "url": "2",
-                "schema": {
-                  "type": "page",
-                  "title": "页面A-2",
-                  "body": "页面A-2"
-                }
-              },
-              {
-                "label": "页面A-3",
-                "url": "3",
-                "schema": {
-                  "type": "page",
-                  "title": "页面A-3",
-                  "body": "页面A-3"
-                }
-              }
-            ]
-          },
-          {
-            "label": "页面B",
-            "schema": {
-              "type": "page",
-              "title": "页面B",
-              "body": "页面B"
+                    "type": "page",
+                    "body": "系统设置..."
+                },
+                "children": [
+                    {
+                        "label": "全局设置",
+                        "icon": "fa fa-cog",
+                        "url": "setting",
+                        "schema": {
+                            "type": "page",
+                            "body": "全局设置..."
+                        }
+                    },
+                    {
+                        "label": "页面管理",
+                        "icon": "fa fa-file",
+                        "url": "pages",
+                        "schema": {
+                            "type": "page",
+                            "body": "页面管理..."
+                        }
+                    },
+                    {
+                        "label": "用户管理",
+                        "icon": "fa fa-users",
+                        "url": "users",
+                        "schema": {
+                            "type": "page",
+                            "body": "用户管理..."
+                        }
+                    },
+                    {
+                        "label": "帮助文档",
+                        "icon": "fa fa-question-circle",
+                        "link": "https://baidu.gitee.io/amis"
+                    }
+                ]
             }
-          },
-          {
-            "label": "页面C",
-            "schema": {
-              "type": "page",
-              "title": "页面C",
-              "body": "页面C"
-            }
-          },
-          {
-            "label": "列表示例",
-            "url": "/crud",
-            "rewrite": "/crud/list",
-            "icon": "fa fa-cube",
-            "children": [
-              {
-                "label": "列表",
-                "url": "/crud/list",
-                "icon": "fa fa-list",
-                "schemaApi": "get:/pages/crud-list.json"
-              },
-              {
-                "label": "新增",
-                "url": "/crud/new",
-                "icon": "fa fa-plus",
-                "schemaApi": "get:/pages/crud-new.json"
-              },
-              {
-                "label": "查看",
-                "url": "/crud/:id",
-                "schemaApi": "get:/pages/crud-view.json"
-              },
-              {
-                "label": "修改",
-                "url": "/crud/:id/edit",
-                "schemaApi": "get:/pages/crud-edit.json"
-              }
-            ]
-          }
         ]
-      },
-      {
-        "label": "分组2",
-        "children": [
-          {
-            "label": "用户管理",
-            "schema": {
-              "type": "page",
-              "title": "用户管理",
-              "body": "页面C"
-            }
-          },
-          {
-            "label": "外部链接",
-            "link": "http://baidu.gitee.io/amis"
-          },
-          {
-            "label": "部门管理",
-            "schemaApi": "https://3xsw4ap8wah59.cfc-execute.bj.baidubce.com/api/amis-mock/mock2/service/form?tpl=tpl3"
-          }
-        ]
-      }
-    ]
-  }
+    }
 }
