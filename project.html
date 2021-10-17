@@ -7,9 +7,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <link rel="stylesheet" title="default" href="https://cdn.jsdelivr.net/npm/amis@beta/sdk/sdk.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/amis@beta/sdk/helper.css" />
-    <script src="https://cdn.jsdelivr.net/npm/amis@beta/sdk/sdk.js"></script>
+    <link rel="stylesheet" title="default" href="public/sdk/sdk.css" />
+    <link rel="stylesheet" href="public/sdk/helper.css" />
+    <link rel="stylesheet" href="public/sdk/iconfont.css" />
+    <script src="public/sdk/sdk.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/history/umd/history.js"></script>
     <style>
@@ -39,6 +40,7 @@
             const app = {
                 "type": "page",
                 "title": "项目列表",
+                "initApi": "https://3xsw4ap8wah59.cfc-execute.bj.baidubce.com/api/amis-mock/sample",
                 "body": [
                     {
                         "type": "cards",
@@ -131,6 +133,20 @@
                     location: history.location
                 },
                 {
+                    // fetcher: (url, method, data, config) => {
+                    //     console.log("fetcher", method, url, data, config);
+                    // },
+                    // requestAdaptor(api) {
+                    //     console.log("requestAdaptor", api);
+                    //     return api;
+                    // },
+                    responseAdaptor(api, response, query, request) {
+                        console.log("responseAdaptor", api, response, query, request);
+                        response.code = response.status
+                        response.message = response.msg
+                        console.log("responseAdaptor", response);
+                        return response;
+                    },
                     // watchRouteChange: fn => {
                     //   return history.listen(fn);
                     // },

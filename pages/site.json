@@ -20,6 +20,7 @@
                 "url": "/sys",
                 "schema": {
                     "type": "page",
+                    "title": "系统设置",
                     "body": "系统设置..."
                 },
                 "children": [
@@ -29,7 +30,8 @@
                         "url": "setting",
                         "schema": {
                             "type": "page",
-                            "body": "全局设置..."
+                            "title": "页面标题",
+                            "body": "页面内容..."
                         }
                     },
                     {

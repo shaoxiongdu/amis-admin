@@ -9,16 +9,10 @@
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <link
-      rel="stylesheet"
-      title="default"
-      href="https://cdn.jsdelivr.net/npm/amis@beta/sdk/sdk.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/amis@beta/sdk/helper.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/amis@beta/sdk/sdk.js"></script>
+    <link rel="stylesheet" title="default" href="public/sdk/sdk.css" />
+    <link rel="stylesheet" href="public/sdk/helper.css" />
+    <link rel="stylesheet" href="public/sdk/iconfont.css" />
+    <script src="public/sdk/sdk.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/history/umd/history.js"></script>
     <style>
@@ -45,16 +39,16 @@
         const history = History.createHashHistory();
 
         const app = {
-          "type": "app",
-          "brandName": "app1",
-          "logo": "/public/CouchPotatoGopher.png",
-          "header": {
-            "type": "tpl",
-            "inline": false,
-            "className": "w-full",
-            "tpl": "<div class='flex justify-between'><div>顶部区域左侧</div><div>顶部区域右侧</div></div>"
-          },
-          // footer: '<div class="p-2 text-center bg-light">底部区域</div>',
+          type: "app",
+          brandName: "aaa",
+          logo: "/public/CouchPotatoGopher.png",
+          header: {
+                type: 'tpl',
+                inline: false,
+                className: 'w-full',
+                tpl: '<div class="flex justify-between"><div>' + '<ul class="HeaderLinks"><a href="/amis/zh-CN/docs">文档</a><a href="/amis/zh-CN/components">组件</a><a href="/amis/zh-CN/style">样式</a><a href="/amis/examples/index">示例</a><a href="https://github.com/fex-team/amis-editor-demo" target="_blank">编辑器</a></ul>' + '</div>'
+            },
+        //   footer: '<div class="p-2 text-center bg-light">底部区域</div>',
           // asideBefore: '<div class="p-2 text-center">菜单前面区域</div>',
           // asideAfter: '<div class="p-2 text-center">菜单后面区域</div>',
           "api": "/pages/site.json"
